@@ -1,21 +1,28 @@
 let color;
 let colors = document.querySelectorAll('.list-colors li');
 let lousa = [];
-let numberColors = 7 * 5
+let numberColors = 9 * 5
+//let numberColors = 1000 * 5
+let pintando = false
 
 const handleChoiseColor = (e) => {
   color = e.style.background
   document.querySelector('.choisedColor span').style.background = color
 }
 
-const handleChangeRange = (e) => {
-  numberColors = e.target.value * (e.target.value - 2)
-  changeLiWidth()
-  updateLousa()
-}
-
 const handleClickLousa = (e) => {
   e.style.background = color
+}
+
+const handleOverLousa = (e) => {
+  e.addEventListener('mousedown', () => pintando = true)
+  e.addEventListener('mouseup', () => pintando = false)
+  e.addEventListener('mousemove', () => {
+    if(pintando){
+      handleClickLousa(e)
+    }
+  })
+  
 }
 
 const cleanLousa = () => {
@@ -34,7 +41,10 @@ window.addEventListener('load', () => {
   updateLousa()
   colors.forEach((e) => e.addEventListener('click', () => handleChoiseColor(e)))
   lousa.forEach((e) => e.addEventListener('click', () => handleClickLousa(e)))
-  range.addEventListener('input', handleChangeRange)
+  lousa.forEach((e) => e.addEventListener('mouseover', () => handleOverLousa(e)))
+  /*
+  lousa.forEach(e => e.addEventListener('mousedown', () => pintando = true))
+  lousa.forEach(e => e.addEventListener('mouseup', () => pintando = false))*/
   document.querySelector('.button button').addEventListener('click', cleanLousa)
 })
 
