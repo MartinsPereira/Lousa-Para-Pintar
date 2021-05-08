@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Roboto", Helvetica, sans-serif;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+}
+.menuChoises{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.rangeLousa{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.list-colors{
+  display: grid;
+  grid-template-columns: repeat(4,80px) ;
+  grid-template-rows: 80px;
+  gap: 10px;
+}
+.list-colors li,.lousa li{
+  border: 4px solid rgb(40,40,40);
+}
+.button{
+  display: block;
+}
+.lousa{
+  display: flex;
+  max-width: 532px;
+  max-height: 380px;
+  flex-wrap: wrap;
+}
+.lousa li{
+  height: 80px;
+  width: 80px;
+  margin: -2px;
+}
+.choisedColor{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.choisedColor span{
+  height: 15px;
+  width: 15px;
+  border: 2px solid rgb(40,40,40);
+}
