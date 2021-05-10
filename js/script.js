@@ -15,13 +15,15 @@ const handleClickLousa = (e) => {
 }
 
 const handleOverLousa = (e) => {
-  e.addEventListener('mousedown', () => pintando = true)
-  e.addEventListener('mouseup', () => pintando = false)
-  e.addEventListener('mousemove', () => {
-    if(pintando){
-      handleClickLousa(e)
-    }
-  })
+  console.log(e)
+  console.log(pintando)
+    e.addEventListener('mousedown', () => pintando = true)
+    e.addEventListener('mouseup', () => pintando = false)
+    e.addEventListener('mousemove', () => {
+      if(pintando){
+        handleClickLousa(e)
+      }
+    })
   
 }
 
@@ -42,6 +44,7 @@ window.addEventListener('load', () => {
   colors.forEach((e) => e.addEventListener('click', () => handleChoiseColor(e)))
   lousa.forEach((e) => e.addEventListener('click', () => handleClickLousa(e)))
   lousa.forEach((e) => e.addEventListener('mouseover', () => handleOverLousa(e)))
+  
   /*
   lousa.forEach(e => e.addEventListener('mousedown', () => pintando = true))
   lousa.forEach(e => e.addEventListener('mouseup', () => pintando = false))*/
